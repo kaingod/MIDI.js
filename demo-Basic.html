@@ -1,36 +1,155 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns = "http://www.w3.org/1999/xhtml">
-<head>
- <meta http-equiv="content-type" content="text/html; charset=utf-8" />
- <!-- midi.js package -->
- <script src="./js/MIDI/AudioDetect.js" type="text/javascript"></script>
- <script src="./js/MIDI/LoadPlugin.js" type="text/javascript"></script>
- <script src="./js/MIDI/Plugin.js" type="text/javascript"></script>
- <script src="./js/MIDI/Player.js" type="text/javascript"></script>
- <script src="./js/Window/DOMLoader.XMLHttp.js" type="text/javascript"></script>
- <!-- extras -->
- <script src="./inc/Base64.js" type="text/javascript"></script>
- <script src="./inc/base64binary.js" type="text/javascript"></script>
-</head>
-<body>
-<script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-window.onload = function () {
-	MIDI.loadPlugin({
-		soundfontUrl: "./soundfont/",
-		instrument: "acoustic_grand_piano",
-		callback: function() {
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <!-- midi.js package -->
+    <script src="inc/jasmid/replayer.js"></script>
+    <script src="inc/jasmid/midifile.js"></script>
+    <script src="inc/jasmid/stream.js"></script>
+    <script src="./js/MIDI/AudioDetect.js" type="text/javascript"></script>
+    <script src="./js/MIDI/LoadPlugin.js" type="text/javascript"></script>
+    <script src="./js/MIDI/Plugin.js" type="text/javascript"></script>
+    <script src="./js/MIDI/Player.js" type="text/javascript"></script>
+    <script src="./js/Window/DOMLoader.XMLHttp.js" type="text/javascript"></script>
+    <!-- extras -->
+    <script src="./inc/Base64.js" type="text/javascript"></script>
+    <script src="./inc/base64binary.js" type="text/javascript"></script>
+    <script src="jquery-1.11.2.min.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        $(function() {
+
+            MIDI.loadPlugin({
+                soundfontUrl: "./soundfont/",
+                instrument: "acoustic_grand_piano",
+                callback: function() {
+
+                }
+            });
+
+
+			$(document).scroll(function(e){
+				console.log($(this).scrollTop());
+				Tocar($(this).scrollTop());
+			});
+        });
+
+        function Tocar(nota) {
 			var delay = 0; // play one note every quarter second
-			var note = 50; // the MIDI note
-			var velocity = 127; // how hard the note hits
+            var note =parseInt( nota / 5, 10); // the MIDI note
+            var velocity = 127; // how hard the note hits
 			// play the note
 			MIDI.setVolume(0, 127);
 			MIDI.noteOn(0, note, velocity, delay);
 			MIDI.noteOff(0, note, delay + 0.75);
-		}
-	});
-};
+        };
+    </script>
 
-</script>
+
+TEXT
+
+I'm not sure you made it loud enough, sir.
+
+I believe whatever doesn't kill you simply makes you... stranger.
+
+Every man who has lotted here over the centuries, has looked up to the light and imagined climbing to freedom. So easy, so simple! And like shipwrecked men turning to seawater foregoing uncontrollable thirst, many have died trying. And then here there can be no true despair without hope. So as I terrorize Gotham, I will feed its people hope to poison their souls. I will let them believe that they can survive so that you can watch them climbing over each other to stay in the sun. You can watch me torture an entire city. And then when you've truly understood the depth of your failure, we will fulfill Ra's Al Ghul's destiny. We will destroy Gotham. And then, when that is done, and Gotham is... ashes Then you have my permission to die.
+
+I just want my phone call.
+
+Take a look, his speed, his ferocity, his training. I see the power of belief. I see the League of Shadows resurgent.
+
+I honor my father by finishing his work. Vengeance against the man who killed him is simply a reward for my patience.
+
+The training is nothing! Will is everything! The will to act.
+
+The first time I stole so that I wouldn't starve, yes. I lost many assumptions about the simple nature of right and wrong. And when I traveled I learned the fear before a crime and the thrill of success. But I never became one of them.
+
+Criminals thrive on the indulgence of society's understanding.
+
+You should use your full name. I like that name, Robin.
+
+Bane was a member of the League of Shadows. And then he was excommunicated. And any man who is too extreme for Ra's Al Ghul, is not to be trifled with.
+
+You don't owe these people anymore. You've given them everything.
+
+I've sewn you up, I've set your bones, but I won't bury you. I've buried enough members in the Wayne family.
+
+A little the worse for wear, I'm afraid.
+
+Now, our operation is small but there is a lot of potential for aggressive expansion. So which of you fine gentlemen would like to join our team? Oh. There's only one spot open right now, so we're gonna have... tryouts.
+
+Do you feel in charge?
+
+I see a beautiful city and the brilliant people rising from this abyss. I see the lives, for which I lay down my life. Peaceful, useful, prosperous and happy. I see that I hold a sanctuary in their hearts and in the hearts of their descendents. Generations ends. That is the far, far better thing that I do than I have ever done. That is a far, far better rest that I go to than I have ever known.
+
+Dr. Crane isn't here right now. But if you'd like to make an appointment.
+
+So you came back to die with your city!
+
+Do I really look like a guy with a plan?
+
+Never start with the head. The victim gets all fuzzy. He can't feel the next... See?
+
+Pretty soon we will be chasing down over due library books.
+
+Every year, I took a holiday. I went to Florence, this cafe on the banks of the Arno. Every fine evening, I would sit there and order a Fernet Branca. I had this fantasy, that I would look across the tables and I would see you there with a wife maybe a couple of kids. You wouldn't say anything to me, nor me to you. But we would both know that you've made it, that you were happy. I never wanted you to come back to Gotham. I always knew there was nothing here for you except pain and tragedy and I wanted something more for you than that. I still do.
+
+This is what happens when an unstoppable force meets an immovable object.
+
+It was a dog. It was a big dog.
+
+Behind you, stands a symbol of oppression. Blackgate Prison, where a thousand men have languished under the name of this man: Harvey Dent.
+
+Do you wanna know why I use a knife? Guns are too quick. You can't savor all the... little emotions. You see, in their last moments, people show you who they really are. So in a way, I knew your friends better than you ever did. Would you like to know which of them were cowards?
+
+Is Bruce Wayne really that paranoid?
+
+You know how to fight six men. We can teach you how to engage 600.
+
+You can swapnot sleeping in a penthouse... for not sleeping in a mansion. Whenever you stitch yourself up, you do make a bloody mess.
+
+I'm Batman
+
+Your Punishment Must Be More Severe.
+
+Are you so desperate to fight criminals that you lock yourself in to take them on one at a time ?
+
+Just know that there are those of us who care about what you do with your future.
+
+We have purged your fear. You are ready to Iead these men. You are ready to become a member of the League of Shadows. But first, you must demonstrate your commitment to justice.
+
+You either die a hero or you live long enough to see yourself become the villain.
+
+Perhaps you should read the instructions first?
+
+Let me get this straight. You think that your client, one of the wealthiest, most powerful men in the world is secretly a vigilante who spends his nights beating criminals to a pulp with his bare hands and your plan is to blackmail this person? Good luck.
+
+You wanna know how I got these scars? My father was... a drinker, and a fiend. And one night, he goes off crazier than usual. Mommy gets the kitchen knife to defend herself. He doesn't like that, not one bit. So, me watching he takes the knife to her, laughing while he does it. He turns to me and he says: "Why so serious?". He comes at me with the knife "Why so serious?". He sticks the blade in my mouth. "Let's put a smile on that face." and... Why so serious?
+
+Gotham's time has come.
+
+I know exactly who he was. He was the Batman.
+
+You know how to disappear. We can teach you to become truly invisible.
+
+Oh, hee-hee, aha. Ha, ooh, hee, ha-ha, ha-ha. And I thought my jokes were bad.
+
+Carbon fiber, .28 caliber, made in China. If you wanna kill a public servant, Mr Maroni... I recommend you buy American.
+
+Just you, sir? Don't worry, Master Wayne. It takes a little time to get back in the swing of things.
+
+How strong a lie. Now this evil rises again where we tried to bury him. The Batman has to come back.
+
+Accomplice? I'm gonna tell them the whole thing was your idea.
+
+I climbed out of the pit. I found my father and brought him back to exact terrible vengeance. But by that time, the prisoners and the doctor had their work to my friend, my protector. The League took us in and trained us but my father could not accept Bane. He saw only a monster, whose very existence was the reminder of the hell he'd left his wife to die in. He excommunicated Bane from the League of Shadows. His only crime was that he loved me. I could not forgive my father, until you murdered him.
+
+I had a vision of a world without Batman. The Mob ground out a little profit and the police tried to shut them down one block at a time. And it was so boring. I've had a change of heart. I don't want Mr Reese spoiling everything but why should I have all the fun? Let's give someone else a chance. If Coleman Reese isn't dead in 60 minutes then I blow up a hospital.
+
+I'm here to ensure the League of Shadow fulfills its duty to restore balance to civilization. You yourself fought the decadence of Gotham for years...
 </body>
+
 </html>
